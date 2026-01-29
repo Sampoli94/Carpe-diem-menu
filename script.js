@@ -43,6 +43,7 @@ const MENU = [
       { name: { it: "Caffè decaffeinato", en: "Decaf" }, price: "€ 1,20" },
       { name: { it: "Ginseng", en: "Ginseng" }, price: "€ 1,30" },
       { name: { it: "Cappuccino / Latte macchiato", en: "Cappuccino / Latte" }, price: "€ 1,80" },
+      { name: { it: "Cappuccino Deca", en: "Cappuccino Deca" }, price: "€ 2,00" },
       { name: { it: "Latte bianco", en: "Hot milk" }, price: "€ 1,30" },
       { name: { it: "Caffè freddo", en: "Iced coffee" }, price: "€ 2,00" },
       { name: { it: "Crema caffè", en: "Coffee cream" }, price: "€ 2,00" },
