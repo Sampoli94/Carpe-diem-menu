@@ -297,31 +297,22 @@ function renderMenu() {
     list.className = "menu-list";
 
     for (const item of category.items) {
-      const row = document.createElement("div");
-      row.className = "menu-item";
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "menu-item";
 
-      const nameEl = document.createElement("span");
-      nameEl.className = "menu-item-name";
-      
       // Separa nome prodotto da ingredienti (tra parentesi)
       const fullName = localize(item.name);
       const match = fullName.match(/^([^(]+)(\(.+\))?$/);
-      
-      if (match) {
-        const productName = document.createElement("span");
-        productName.className = "product-name";
-        productName.textContent = match[1].trim();
-        nameEl.appendChild(productName);
-        
-        if (match[2]) {
-          const productDesc = document.createElement("span");
-          productDesc.className = "product-desc";
-          productDesc.textContent = " " + match[2];
-          nameEl.appendChild(productDesc);
-        }
-      } else {
-        nameEl.textContent = fullName;
-      }
+      const productName = match ? match[1].trim() : fullName;
+      const productDesc = match && match[2] ? match[2] : null;
+
+      // Prima riga: nome + puntini + prezzo
+      const row = document.createElement("div");
+      row.className = "menu-item-row";
+
+      const nameEl = document.createElement("span");
+      nameEl.className = "menu-item-name";
+      nameEl.textContent = productName;
 
       const dots = document.createElement("span");
       dots.className = "menu-item-dots";
@@ -333,7 +324,17 @@ function renderMenu() {
       row.appendChild(nameEl);
       row.appendChild(dots);
       row.appendChild(priceEl);
-      list.appendChild(row);
+      itemDiv.appendChild(row);
+
+      // Seconda riga: ingredienti (se ci sono)
+      if (productDesc) {
+        const descEl = document.createElement("span");
+        descEl.className = "menu-item-desc";
+        descEl.textContent = productDesc;
+        itemDiv.appendChild(descEl);
+      }
+
+      list.appendChild(itemDiv);
     }
 
     section.appendChild(list);
