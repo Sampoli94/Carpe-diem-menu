@@ -84,6 +84,7 @@ const MENU = [
       { name: { it: "Acqua Tonica Mediterranea", en: "Mediterranean Tonic Water" }, price: "€ 2,50" }, 
       { name: { it: "Red Bull", en: "Red Bull" }, price: "€ 2,50" }, 
       { name: { it: "Moretti", en: "Moretti" }, price: "€ 2,00" },
+      { name: { it: "Warsteiner", en: "Warsteiner" }, price: "€ 2,00" },
       { name: { it: "Menabrea Bionda", en: "Menabrea Blonde" }, price: "€ 3,00" }, 
       { name: { it: "Guinness", en: "Guinness" }, price: "€ 3,50" }, 
       { name: { it: "Tennent's", en: "Tennent's" }, price: "€ 4,00" }, 
